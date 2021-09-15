@@ -9,8 +9,24 @@ import static org.junit.Assert.assertThat;
 public class AccountTest {
 
     @Test
-	@Ignore
+    public void startingBalanceIsZero() {
+        Account account = new Account();
+        assertThat(account.balance, is(0));
+    }
+
+    @Test
     public void depositAnAmountToIncreaseTheBalance() {
-        assertThat("your first test isn't implemented", true, is(false));
+        Account account = new Account();
+        account.deposit(100);
+
+        assertThat(account.balance, is(100));
+    }
+
+    @Test
+    public void depositingMultipleAmounts() {
+        Account account = new Account();
+        account.deposit(100);
+        account.deposit(300);
+        assertThat(account.balance, is(400));
     }
 }
