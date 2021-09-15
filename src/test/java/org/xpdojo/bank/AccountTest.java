@@ -29,4 +29,16 @@ public class AccountTest {
         account.deposit(300);
         assertThat(account.balance, is(400));
     }
+
+    @Test
+    public void withdrawAmounts() {
+        Account account = new Account();
+        account.deposit(300);
+
+        assertThat(account.balance, is(300));
+
+
+        account.withdraw(100);
+        assertThat(account.balance, is(200));
+    }
 }
